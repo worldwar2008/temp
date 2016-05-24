@@ -21,10 +21,13 @@ def g_time(time_str):
 
 
 def create_submission(predictions, predict_df, loss):
-    result1 = pd.DataFrame(predictions, columns=['gap'])
+    result1 = pd.DataFrame(predictions, columns=["gap"])
 
     final_result = pd.concat([predict_df, result1], axis=1)
-    final_result = final_result["district_id", "time", "gap"]
+    #final_result = final_result["district_id", "time", "gap"]
+    print "final_result",final_result[:10]
+    final_result = final_result.loc[:,["district_id","time", "gap"]]
+    #final_result["district_id"] = int(final_result["district_id"])
     now = datetime.now()
     if not os.path.isdir('subm'):
         os.mkdir('subm')
