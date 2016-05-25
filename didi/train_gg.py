@@ -51,7 +51,7 @@ train_target_data = train_df["percent"]
 rfr = RandomForestRegressor(n_estimators=1000, max_depth=13, n_jobs=2, max_features=6)
 #clf = rfr.fit(train_data, train_target_data)
 
-est = GradientBoostingRegressor(n_estimators=1000, max_depth=13, learning_rate=1.0)
+est = GradientBoostingRegressor(loss='lad',n_estimators=1000, max_depth=13, learning_rate=0.01)
 clf = est.fit(train_data, train_target_data)
 
 # scores = cross_val_score(clf, train_data, train_target_data, cv=3, n_jobs=3)
@@ -74,24 +74,24 @@ test_target_data = test_df["percent"]
 test_score = clf.score(test_data, test_target_data)
 
 print "test_score: ", test_score
-print "mape_socre: ", np.mean(abs(clf.predict(test_data)-test_target_data)/test_target_data)
+print "mape_socre: ", np.mean(abs(clf.predict(test_data)-test_target_data)/(test_target_data+1))
 
 
-#
-# predict_df = pd.read_csv("./train_data/s1_predict.csv", sep=",", header=None, names=["district_id",
-#                                                                                      "time",
-#                                                                                      "tj_level_1",
-#                                                                                      "tj_level_2",
-#                                                                                      "tj_level_3",
-#                                                                                      "tj_level_4"])
-# good_df = predict_df.copy()
-# print "good_df.shape", good_df.shape
-#
-#
-# predict_df["time"] = [g_time(item) for item in predict_df["time"]]
-# predict_df = predict_df.fillna(method='pad')
-# good_df = good_df.fillna(method='pad')
-#
-# predictions = clf.predict(predict_df)
-#
-# create_submission(predictions, good_df, test_score)
+
+predict_df = pd.read_csv("./train_data/s1_predict.csv", sep=",", header=None, names=["district_id",
+                                                                                     "time",
+                                                                                     "tj_level_1",
+                                                                                     "tj_level_2",
+                                                                                     "tj_level_3",
+                                                                                     "tj_level_4"])
+good_df = predict_df.copy()
+print "good_df.shape", good_df.shape
+
+
+predict_df["time"] = [g_time(item) for item in predict_df["time"]]
+predict_df = predict_df.fillna(method='pad')
+good_df = good_df.fillna(method='pad')
+
+predictions = clf.predict(predict_df)
+
+create_submission(predictions, good_df, test_score)
