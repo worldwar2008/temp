@@ -11,14 +11,15 @@ from sklearn.metrics import mean_absolute_error
 
 train_df = pd.read_csv("./train_data/s1_train_atw.csv", sep=",", header=None, names=["district_id",
                                                                                      "time",
+                                                                                     "percent",
                                                                                      "tj_level_1",
                                                                                      "tj_level_2",
                                                                                      "tj_level_3",
                                                                                      "tj_level_4",
                                                                                      "weather",
                                                                                      "temperature",
-                                                                                     "pm25",
-                                                                                     "percent"])
+                                                                                     "pm25"
+                                                                                     ])
 
 
 def g_time(time_str):
@@ -47,6 +48,11 @@ def create_submission(predictions, predict_df, loss):
 
 
 train_df["time"] = [g_time(item) for item in train_df["time"]]
+train_df = train_df.sort_values(by=["district_id", "time"])
+train_df = train_df.fillna(method='pad')
+train_df = train_df.fillna(method='backfill')
+
+
 train_df = train_df.dropna()
 
 train_data = train_df.loc[:, ["district_id",
@@ -61,29 +67,31 @@ train_data = train_df.loc[:, ["district_id",
 
 train_target_data = train_df["percent"]
 
-rfr = RandomForestRegressor(n_estimators=1000, max_depth=15, n_jobs=2, max_features=8)
+rfr = RandomForestRegressor(n_estimators=100, max_depth=13, n_jobs=2, max_features=8)
 clf = rfr.fit(train_data, train_target_data)
 
 # est = GradientBoostingRegressor(loss='lad', n_estimators=1000, max_depth=13, learning_rate=0.5)
 # clf = est.fit(train_data, train_target_data)
 
-val_scores = cross_val_score(clf, train_data, train_target_data, cv=3, n_jobs=3)
+val_scores = cross_val_score(rfr, train_data, train_target_data, cv=3, n_jobs=3)
 print "val_scores", val_scores
 print "val_scores_mean", np.mean(val_scores)
 
 test_df = pd.read_csv("./train_data/s1_test_atw.csv", sep=",", header=None, names=["district_id",
-                                                                               "time",
-                                                                               "tj_level_1",
-                                                                               "tj_level_2",
-                                                                               "tj_level_3",
-                                                                               "tj_level_4",
-                                                                               "weather",
-                                                                               "temperature",
-                                                                               "pm25",
-                                                                               "percent"])
+                                                                                   "time",
+                                                                                   "percent",
+                                                                                   "tj_level_1",
+                                                                                   "tj_level_2",
+                                                                                   "tj_level_3",
+                                                                                   "tj_level_4",
+                                                                                   "weather",
+                                                                                   "temperature",
+                                                                                   "pm25"])
 
 test_df["time"] = [g_time(item) for item in test_df["time"]]
+test_df = test_df.sort_values(by=["district_id", "time"])
 test_df = test_df.fillna(method='pad')
+test_df = test_df.fillna(method='backfill')
 
 test_data = test_df.loc[:, ["district_id",
                             "time",
@@ -102,19 +110,22 @@ test_score = clf.score(test_data, test_target_data)
 print "test_score: ", test_score
 print "mape_socre: ", np.mean(np.abs(clf.predict(test_data) - test_target_data) / (test_target_data + 0.2))
 
-#
-#
+
+
 # predict_df = pd.read_csv("./train_data/s1_predict_atw.csv", sep=",", header=None, names=["district_id",
-#                                                                                      "time",
-#                                                                                      "tj_level_1",
-#                                                                                      "tj_level_2",
-#                                                                                      "tj_level_3",
-#                                                                                      "tj_level_4"])
+#                                                                                          "time",
+#                                                                                          "tj_level_1",
+#                                                                                          "tj_level_2",
+#                                                                                          "tj_level_3",
+#                                                                                          "tj_level_4",
+#                                                                                          "weather",
+#                                                                                          "temperature",
+#                                                                                          "pm25"])
 # good_df = predict_df.copy()
 # print "good_df.shape", good_df.shape
 #
-#
 # predict_df["time"] = [g_time(item) for item in predict_df["time"]]
+#
 # predict_df = predict_df.fillna(method='pad')
 # good_df = good_df.fillna(method='pad')
 #
