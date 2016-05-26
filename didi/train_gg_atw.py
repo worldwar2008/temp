@@ -79,14 +79,14 @@ train_data = train_df.loc[:, ["district_id",
 train_target_data = train_df["percent"]
 
 # rfr = RandomForestRegressor(n_estimators=2000, max_depth=16, n_jobs=4, max_features=8)
-rfr = RandomForestRegressor(n_estimators=1000, n_jobs=4)
+clf = RandomForestRegressor(n_estimators=1000, n_jobs=4)
 
-clf = rfr.fit(train_data, train_target_data)
+#clf = rfr.fit(train_data, train_target_data)
 
 # est = GradientBoostingRegressor(loss='lad', n_estimators=1000, max_depth=13, learning_rate=0.5)
 # clf = est.fit(train_data, train_target_data)
 
-val_scores = cross_val_score(rfr, train_data, train_target_data, cv=3, n_jobs=4)
+val_scores = cross_val_score(clf, train_data, train_target_data, cv=3, n_jobs=4)
 print "val_scores", val_scores
 print "val_scores_mean", np.mean(val_scores)
 
