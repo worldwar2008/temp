@@ -80,25 +80,24 @@ train_data = train_df.loc[:, ["district_id",
 train_target_data = train_df["percent"]
 
 # rfr = RandomForestRegressor(n_estimators=2000, max_depth=16, n_jobs=4, max_features=8)
-rfr = RandomForestRegressor(n_estimators=8000, n_jobs=3, max_features=5)
+#rfr = RandomForestRegressor(n_estimators=1000, n_jobs=1, min_samples_split=3, max_features=5)
 
-clf = rfr.fit(train_data, train_target_data)
+#clf = rfr.fit(train_data, train_target_data)
 
-
-# est = GradientBoostingRegressor(loss='lad', n_estimators=1000, max_depth=13, learning_rate=0.5)
-# clf = est.fit(train_data, train_target_data)
+est = GradientBoostingRegressor(loss='lad', n_estimators=1000, max_depth=13, learning_rate=0.5)
+clf = est.fit(train_data, train_target_data)
 
 def get_mape(test_df):
     test_predict = clf.predict(test_data)
     # old_mape = np.mean(np.abs(clf.predict(test_data) - test_target_data) / (test_target_data + 1))
     test_df["predict"] = test_predict
-    test_df["gap_diff"] = np.abs(test_df["predict"] - test_df["percent"]) / (test_df["percent"] + 1.0)
+    test_df["gap_diff"] = np.abs(test_df["predict"] - test_df["percent"]) / (test_df["percent"] + 0.5)
     test_df = test_df.fillna("pad")
     return np.mean(test_df.groupby(["district_id"])["gap_diff"].mean())
 
 
 def my_mape_loss_func(ground_truth, predictions):
-    diff = np.mean(np.abs(ground_truth - predictions) / np.abs(ground_truth + 1.0))
+    diff = np.mean(np.abs(ground_truth - predictions) / np.abs(ground_truth + 0.5))
     #print "guo_diff:", diff
     return np.abs(diff)
 
@@ -111,7 +110,7 @@ def my_custom_loss_func(ground_truth, predictions):
 mape_loss = make_scorer(my_mape_loss_func, greater_is_better=False)
 
 # val_scores = cross_val_score(rfr, train_data, train_target_data, cv=3, n_jobs=4, scoring="mean_absolute_error")
-val_scores = cross_val_score(rfr, train_data, train_target_data, cv=3, n_jobs=6, scoring=mape_loss)
+val_scores = cross_val_score(est, train_data, train_target_data, cv=10, n_jobs=6, scoring=mape_loss)
 
 print "val_scores", val_scores
 print "val_scores_mean", np.mean(val_scores)
