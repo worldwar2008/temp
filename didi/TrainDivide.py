@@ -13,9 +13,10 @@ from sklearn.metrics import fbeta_score, make_scorer
 
 class TrainDivide(object):
     def __init__(self):
-        self.est = GradientBoostingRegressor(loss='lad', n_estimators=10, max_depth=13, learning_rate=0.5)
+        self.est = GradientBoostingRegressor(n_estimators=2000, max_depth=13, learning_rate=0.1)
         self.rfr = RandomForestRegressor(n_estimators=10, n_jobs=1, min_samples_split=3, max_features=5)
         self.test_score = 0
+        self.mp = 0
 
     @staticmethod
     def g_time(time_str):
@@ -33,6 +34,8 @@ class TrainDivide(object):
             return 0
 
     def create_submission(self, predictions, predict_df, loss):
+        print "len(predictions)", len(predictions)
+        print "len(predict_df)", len(predict_df)
         result1 = pd.DataFrame(predictions, columns=["gap"])
 
         final_result = pd.concat([predict_df, result1], axis=1)
@@ -136,6 +139,7 @@ class TrainDivide(object):
         test_data["gap_diff"] = np.abs(test_data["predict"] - test_target_data) / (test_target_data + 0.1)
         test_df = test_data.fillna("pad")
         mape = np.mean(test_df.groupby(["district_id"])["gap_diff"].mean())
+        self.mp = mape
         print "mape_socre: ", mape
         return clf
 
@@ -166,7 +170,6 @@ class TrainDivide(object):
                                                                                                  "temperature",
                                                                                                  "pm25"])
         predict_df["week"] = [self.get_weekday(item) for item in predict_df["time"]]
-
         good_df = predict_df.copy()
         print "good_df.shape", good_df.shape
 
@@ -177,7 +180,9 @@ class TrainDivide(object):
         good_df = good_df.fillna(method='pad')
         predictions = []
         gf = []
-        for district_id in range(1, 66):
+        ts = []
+        mape = []
+        for district_id in range(1, 67):
             print "district_id=", district_id
             train_data, train_target_data = self.get_train_data(district_id)
             test_data, test_target_data = self.get_train_data(district_id)
@@ -186,9 +191,12 @@ class TrainDivide(object):
             prediction = clf.predict(predict_df[predict_df.district_id == district_id])
             for item in prediction:
                 predictions.append(item)
+            ts.append(self.test_score)
+            mape.append(self.mp)
             gf.append(good_df[good_df.district_id == district_id])
         new_good_df = pd.concat(gf)
-        self.create_submission(predictions, new_good_df, self.test_score)
+        print "mape mean:", np.mean(mape)
+        self.create_submission(predictions, new_good_df, np.mean(ts))
 
 
 td = TrainDivide()
