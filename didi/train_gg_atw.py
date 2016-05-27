@@ -80,7 +80,7 @@ train_data = train_df.loc[:, ["district_id",
 train_target_data = train_df["percent"]
 
 # rfr = RandomForestRegressor(n_estimators=2000, max_depth=16, n_jobs=4, max_features=8)
-rfr = RandomForestRegressor(n_estimators=2000, n_jobs=4, max_features=6)
+rfr = RandomForestRegressor(n_estimators=8000, n_jobs=3, max_features=5)
 
 clf = rfr.fit(train_data, train_target_data)
 
@@ -94,7 +94,7 @@ def get_mape(test_df):
     test_df["predict"] = test_predict
     test_df["gap_diff"] = np.abs(test_df["predict"] - test_df["percent"]) / (test_df["percent"] + 1.0)
     test_df = test_df.fillna("pad")
-    return np.mean(test_df.groupby(["district_id"]).mean())
+    return np.mean(test_df.groupby(["district_id"])["gap_diff"].mean())
 
 
 def my_mape_loss_func(ground_truth, predictions):
@@ -111,7 +111,7 @@ def my_custom_loss_func(ground_truth, predictions):
 mape_loss = make_scorer(my_mape_loss_func, greater_is_better=False)
 
 # val_scores = cross_val_score(rfr, train_data, train_target_data, cv=3, n_jobs=4, scoring="mean_absolute_error")
-val_scores = cross_val_score(rfr, train_data, train_target_data, cv=3, n_jobs=4, scoring=mape_loss)
+val_scores = cross_val_score(rfr, train_data, train_target_data, cv=3, n_jobs=6, scoring=mape_loss)
 
 print "val_scores", val_scores
 print "val_scores_mean", np.mean(val_scores)
