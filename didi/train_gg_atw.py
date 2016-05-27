@@ -80,7 +80,7 @@ train_data = train_df.loc[:, ["district_id",
 train_target_data = train_df["percent"]
 
 # rfr = RandomForestRegressor(n_estimators=2000, max_depth=16, n_jobs=4, max_features=8)
-rfr = RandomForestRegressor(n_estimators=1000, n_jobs=4)
+rfr = RandomForestRegressor(n_estimators=2000, n_jobs=4, max_features=6)
 
 clf = rfr.fit(train_data, train_target_data)
 

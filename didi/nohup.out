@@ -1,115 +1,26 @@
+val_scores [ 0.02126826 -0.02354689  0.06698611]
+val_scores_mean 0.0215691586529
+test_score:  0.5398083886
+mape_socre:  3.20884563932
+test_score:  0.563738948854
+mape_socre:  3.48072026566
 Traceback (most recent call last):
-  File "train_gg.py", line 2, in <module>
-    import pandas as pd
-  File "/usr/lib64/python2.6/site-packages/pandas/__init__.py", line 22, in <module>
-    from pandas.compat.numpy_compat import *
-  File "/usr/lib64/python2.6/site-packages/pandas/compat/__init__.py", line 298, in <module>
-    from collections import OrderedDict, Counter
-ImportError: cannot import name Counter
-i 1000 j 12
-0.401067840351
-i 1000 j 13
-0.402081107458
-i 1000 j 14
-0.401263824866
-i 1000 j 15
-0.399498298163
-i 1000 j 16
-0.397019027506
-i 1000 j 17
-0.39414981643
-i 1000 j 18
-0.39096808447
-i 1000 j 19
-0.387803727756
-i 3000 j 12
-0.401150753351
-i 3000 j 13
-0.4021125451
-i 3000 j 14
-0.401334607488
-i 3000 j 15
-0.399594313937
-i 3000 j 16
-0.397143043912
-i 3000 j 17
-0.39426018283
-i 3000 j 18
-0.391164640145
-i 3000 j 19
-0.388012643377
-i 5000 j 12
-0.401170894229
-i 5000 j 13
-0.402129862871
-i 5000 j 14
-0.40135035591
-i 5000 j 15
-0.399629712533
-i 5000 j 16
-0.397163447872
-i 5000 j 17
-0.394308726137
-i 5000 j 18
-0.391206329895
-i 5000 j 19
-0.388079737397
-i 7000 j 12
-0.401175731336
-i 7000 j 13
-0.402128469227
-i 7000 j 14
-0.40136385735
-i 7000 j 15
-0.399630837043
-i 7000 j 16
-0.397175052448
-i 7000 j 17
-0.394293581801
-i 7000 j 18
-0.391200957717
-i 7000 j 19
-0.388051752828
-i 9000 j 12
-0.401194530131
-i 9000 j 13
-0.402131179385
-i 9000 j 14
-0.401379344912
-i 9000 j 15
-0.399637028478
-i 9000 j 16
-0.397190302573
-i 9000 j 17
-0.394305206542
-i 9000 j 18
-0.391206221403
-i 9000 j 19
-0.388053276074
-test_score:  0.898987984205
-mape_socre:  0.35877715356
-good_df.shape (2838, 6)
-final_result    district_id           time   tj_level_1  tj_level_2  tj_level_3  \
-0            1  2016-01-22-46  1461.000000  259.000000  102.000000   
-1            2  2016-01-22-46   651.666667   78.000000   20.000000   
-2            3  2016-01-22-46   188.333333   26.333333    5.333333   
-3            4  2016-01-22-46   652.000000  127.333333   33.666667   
-4            5  2016-01-22-46    97.000000   10.666667    3.000000   
-5            6  2016-01-22-46   321.000000   58.666667   26.333333   
-6            7  2016-01-22-46  1763.333333  247.333333   70.000000   
-7            8  2016-01-22-46  2638.666667  316.000000  114.000000   
-8            9  2016-01-22-46   504.666667   68.333333   19.000000   
-9           10  2016-01-22-46   146.333333   15.333333    4.000000   
-
-   tj_level_4        gap  
-0   67.333333  13.479562  
-1   13.666667   6.417425  
-2    2.666667   2.099138  
-3   30.000000   6.828333  
-4    2.000000   0.010540  
-5   27.000000   4.041753  
-6   45.333333   8.713990  
-7   96.666667  28.608467  
-8   27.666667   2.857001  
-9    0.666667   1.855856  
-final_result.shape (2838, 7)
+  File "train_gg_atw.py", line 77, in <module>
+    val_scores = cross_val_score(rfr, train_data, train_target_data, cv=3, n_jobs=3)
+NameError: name 'rfr' is not defined
+val_scores [-0.04235419 -0.06636311  0.03194086]
+val_scores_mean -0.025592146992
+Traceback (most recent call last):
+  File "train_gg_atw.py", line 109, in <module>
+    test_score = clf.score(test_data, test_target_data)
+  File "/root/.pyenv/versions/anaconda-4.0.0/lib/python2.7/site-packages/sklearn/base.py", line 347, in score
+    return r2_score(y, self.predict(X), sample_weight=sample_weight,
+  File "/root/.pyenv/versions/anaconda-4.0.0/lib/python2.7/site-packages/sklearn/ensemble/forest.py", line 649, in predict
+    X = self._validate_X_predict(X)
+  File "/root/.pyenv/versions/anaconda-4.0.0/lib/python2.7/site-packages/sklearn/ensemble/forest.py", line 316, in _validate_X_predict
+    raise NotFittedError("Estimator not fitted, "
+sklearn.utils.validation.NotFittedError: Estimator not fitted, call `fit` before exploiting the model.
+Traceback (most recent call last):
+  File "train_gg_atw.py", line 72, in <module>
+    clf = rfr.fit(train_data, train_target_data)
+NameError: name 'rfr' is not defined
