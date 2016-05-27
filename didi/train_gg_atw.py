@@ -8,6 +8,7 @@ from sklearn.ensemble import GradientBoostingClassifier, GradientBoostingRegress
 from sklearn.linear_model import SGDRegressor
 from sklearn.cross_validation import cross_val_score
 from sklearn.metrics import mean_absolute_error
+from sklearn.metrics import fbeta_score, make_scorer
 
 train_df = pd.read_csv("./train_data/s1_train_atw.csv", sep=",", header=None, names=["district_id",
                                                                                      "time",
@@ -79,14 +80,39 @@ train_data = train_df.loc[:, ["district_id",
 train_target_data = train_df["percent"]
 
 # rfr = RandomForestRegressor(n_estimators=2000, max_depth=16, n_jobs=4, max_features=8)
-clf = RandomForestRegressor(n_estimators=1000, n_jobs=4)
+rfr = RandomForestRegressor(n_estimators=1000, n_jobs=4)
 
-#clf = rfr.fit(train_data, train_target_data)
+clf = rfr.fit(train_data, train_target_data)
+
 
 # est = GradientBoostingRegressor(loss='lad', n_estimators=1000, max_depth=13, learning_rate=0.5)
 # clf = est.fit(train_data, train_target_data)
 
-val_scores = cross_val_score(clf, train_data, train_target_data, cv=3, n_jobs=4)
+def get_mape(test_df):
+    test_predict = clf.predict(test_data)
+    # old_mape = np.mean(np.abs(clf.predict(test_data) - test_target_data) / (test_target_data + 1))
+    test_df["predict"] = test_predict
+    test_df["gap_diff"] = np.abs(test_df["predict"] - test_df["percent"]) / (test_df["percent"] + 1.0)
+    test_df = test_df.fillna("pad")
+    return np.mean(test_df.groupby(["district_id"]).mean())
+
+
+def my_mape_loss_func(ground_truth, predictions):
+    diff = np.mean(np.abs(ground_truth - predictions) / np.abs(ground_truth + 1.0))
+    #print "guo_diff:", diff
+    return np.abs(diff)
+
+
+def my_custom_loss_func(ground_truth, predictions):
+    diff = np.abs(ground_truth - predictions).max()
+    return np.log(1 + diff)
+
+
+mape_loss = make_scorer(my_mape_loss_func, greater_is_better=False)
+
+# val_scores = cross_val_score(rfr, train_data, train_target_data, cv=3, n_jobs=4, scoring="mean_absolute_error")
+val_scores = cross_val_score(rfr, train_data, train_target_data, cv=3, n_jobs=4, scoring=mape_loss)
+
 print "val_scores", val_scores
 print "val_scores_mean", np.mean(val_scores)
 
@@ -122,17 +148,10 @@ test_target_data = test_df["percent"]
 
 test_score = clf.score(test_data, test_target_data)
 
-
-def get_mape():
-    test_predict = clf.predict(test_data)
-    old_mape = np.mean(np.abs(clf.predict(test_data) - test_target_data) / (test_target_data + 1))
-    test_df["predict"] = test_predict
-    test_df["gap_diff"] = np.abs(test_df["predict"] - test_df["percent"])/(test_df["percent"]+1)
-    return np.mean(test_df.groupby(["district_id"]).mean())
-
+# clf = clf.fit(train_data, train_target_data)
 
 print "test_score: ", test_score
-print "mape_socre: ", get_mape()
+print "mape_socre: ", get_mape(test_df)
 
 predict_df = pd.read_csv("./train_data/s1_predict_atw.csv", sep=",", header=None, names=["district_id",
                                                                                          "time",
