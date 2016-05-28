@@ -1216,3 +1216,230 @@ final_result    district_id           time   tj_level_1  tj_level_2  tj_level_3 
 8   27.666667      2.0          2.0  51.0     0   3.815568  
 9    0.666667      2.0          2.0  51.0     0   4.239344  
 final_result.shape (2838, 11)
+good_df.shape (2838, 10)
+district_id= 1
+test_score:  0.905015007909
+mape_socre:  9.7611710085
+district_id= 2
+test_score:  0.822762415897
+mape_socre:  16.4096768175
+district_id= 3
+test_score:  0.842549440238
+mape_socre:  19.2814809122
+district_id= 4
+test_score:  0.959170312115
+mape_socre:  16.8735808614
+district_id= 5
+test_score:  0.862705643604
+mape_socre:  18.0433525911
+district_id= 6
+test_score:  0.950748307052
+mape_socre:  16.8140530493
+district_id= 7
+test_score:  0.939928940183
+mape_socre:  7.31769102703
+district_id= 8
+test_score:  0.961213947882
+mape_socre:  6.35496612789
+district_id= 9
+test_score:  0.887378932562
+mape_socre:  21.5293517727
+district_id= 10
+test_score:  0.878319938519
+mape_socre:  21.5470161933
+district_id= 11
+test_score:  0.879379661398
+mape_socre:  19.5322482728
+district_id= 12
+test_score:  0.886528885198
+mape_socre:  13.680474814
+district_id= 13
+test_score:  0.843620858274
+mape_socre:  18.0922549889
+district_id= 14
+test_score:  0.962166401616
+mape_socre:  14.3074395464
+district_id= 15
+test_score:  0.852022642339
+mape_socre:  14.5934763707
+district_id= 16
+test_score:  0.932899736313
+mape_socre:  17.2318336519
+district_id= 17
+test_score:  0.827362795582
+mape_socre:  14.5030177337
+district_id= 18
+test_score:  0.85695039684
+mape_socre:  20.9541036408
+district_id= 19
+test_score:  0.922064041844
+mape_socre:  19.6920789945
+district_id= 20
+test_score:  0.926475099305
+mape_socre:  16.7632225856
+district_id= 21
+test_score:  0.868201364159
+mape_socre:  16.0542551559
+district_id= 22
+test_score:  0.924456143321
+mape_socre:  6.83993324879
+district_id= 23
+test_score:  0.951619120546
+mape_socre:  1.6317285767
+district_id= 24
+test_score:  0.962134026414
+mape_socre:  14.5701444783
+district_id= 25
+test_score:  0.928905695115
+mape_socre:  20.8161500611
+district_id= 26
+test_score:  0.897617883673
+mape_socre:  25.3921619895
+district_id= 27
+test_score:  0.916616042575
+mape_socre:  7.60744076834
+district_id= 28
+test_score:  0.954651886759
+mape_socre:  9.5503547259
+district_id= 29
+test_score:  0.914791610213
+mape_socre:  19.4360851556
+district_id= 30
+test_score:  0.819284690858
+mape_socre:  17.3864601683
+district_id= 31
+test_score:  0.859365548044
+mape_socre:  21.0137077679
+district_id= 32
+test_score:  0.819882302182
+mape_socre:  19.3709281017
+district_id= 33
+test_score:  0.851568293055
+mape_socre:  17.0210764519
+district_id= 34
+test_score:  0.87474888405
+mape_socre:  23.13210933
+district_id= 35
+test_score:  0.87463590041
+mape_socre:  21.162707025
+district_id= 36
+test_score:  0.887295414139
+mape_socre:  18.7906608597
+district_id= 37
+test_score:  0.967607828901
+mape_socre:  10.516222572
+district_id= 38
+test_score:  0.916214063152
+mape_socre:  19.5032893242
+district_id= 39
+test_score:  0.923093232162
+mape_socre:  20.3451051652
+district_id= 40
+test_score:  0.872268478941
+mape_socre:  18.9936810163
+district_id= 41
+test_score:  0.864955495218
+mape_socre:  20.9572833803
+district_id= 42
+test_score:  0.908544498067
+mape_socre:  15.4345890315
+district_id= 43
+test_score:  0.867954874879
+mape_socre:  21.8602927101
+district_id= 44
+test_score:  0.816161695628
+mape_socre:  19.3183423764
+district_id= 45
+test_score:  0.858646169469
+mape_socre:  18.5134260913
+district_id= 46
+test_score:  0.967328427533
+mape_socre:  11.5352460049
+district_id= 47
+test_score:  0.890764822876
+mape_socre:  21.9530600353
+district_id= 48
+test_score:  0.945676497799
+mape_socre:  6.36972400645
+district_id= 49
+test_score:  0.841118208998
+mape_socre:  20.2756236828
+district_id= 50
+test_score:  0.826126015304
+mape_socre:  17.348874387
+district_id= 51
+test_score:  0.966204422029
+mape_socre:  0.890306449555
+district_id= 52
+test_score:  0.797080444222
+mape_socre:  18.3323470613
+district_id= 53
+test_score:  0.939285538513
+mape_socre:  22.3633318931
+district_id= 54
+test_score:  0.655251423787
+mape_socre:  18.5792593396
+district_id= 55
+test_score:  0.816566519432
+mape_socre:  10.0436892218
+district_id= 56
+test_score:  0.82834416807
+mape_socre:  20.5092026057
+district_id= 57
+test_score:  0.793672154262
+mape_socre:  14.3312533317
+district_id= 58
+test_score:  0.861408362518
+mape_socre:  17.6114040391
+district_id= 59
+test_score:  0.871439803912
+mape_socre:  17.4169970962
+district_id= 60
+test_score:  0.808232864764
+mape_socre:  17.932418959
+district_id= 61
+test_score:  0.82023042333
+mape_socre:  15.188925809
+district_id= 62
+test_score:  0.822618119316
+mape_socre:  17.1484184478
+district_id= 63
+test_score:  0.814469020684
+mape_socre:  15.3833216835
+district_id= 64
+test_score:  0.82876209638
+mape_socre:  13.5512415949
+district_id= 65
+test_score:  0.813527104515
+mape_socre:  13.7373697165
+district_id= 66
+test_score:  0.814555561285
+mape_socre:  11.3097626456
+test_score mean: 0.877623432517
+mape mean: 16.2168546137
+len(predictions) 2838
+len(predict_df) 2838
+final_result    district_id           time   tj_level_1  tj_level_2  tj_level_3  \
+0            1  2016-01-22-46  1461.000000  259.000000  102.000000   
+1            2  2016-01-22-46   651.666667   78.000000   20.000000   
+2            3  2016-01-22-46   188.333333   26.333333    5.333333   
+3            4  2016-01-22-46   652.000000  127.333333   33.666667   
+4            5  2016-01-22-46    97.000000   10.666667    3.000000   
+5            6  2016-01-22-46   321.000000   58.666667   26.333333   
+6            7  2016-01-22-46  1763.333333  247.333333   70.000000   
+7            8  2016-01-22-46  2638.666667  316.000000  114.000000   
+8            9  2016-01-22-46   504.666667   68.333333   19.000000   
+9           10  2016-01-22-46   146.333333   15.333333    4.000000   
+
+   tj_level_4  weather  temperature  pm25  week        gap  
+0   67.333333      2.0          2.0  51.0     0   8.825979  
+1   13.666667      2.0          2.0  51.0     0  36.871091  
+2    2.666667      2.0          2.0  51.0     0   9.106455  
+3   30.000000      2.0          2.0  51.0     0  37.926046  
+4    2.000000      2.0          2.0  51.0     0  35.898314  
+5   27.000000      2.0          2.0  51.0     0  36.091354  
+6   45.333333      2.0          2.0  51.0     0   9.567262  
+7   96.666667      2.0          2.0  51.0     0   8.668896  
+8   27.666667      2.0          2.0  51.0     0   9.127177  
+9    0.666667      2.0          2.0  51.0     0  34.968118  
+final_result.shape (2838, 11)
