@@ -13,8 +13,8 @@ from sklearn.metrics import fbeta_score, make_scorer
 
 class TrainDivide(object):
     def __init__(self):
-        self.est = GradientBoostingRegressor(n_estimators=2000, max_depth=13, learning_rate=0.1)
-        self.rfr = RandomForestRegressor(n_estimators=10, n_jobs=1, min_samples_split=3, max_features=5)
+        self.est = GradientBoostingRegressor(n_estimators=5000, max_depth=14, learning_rate=0.01)
+        self.rfr = RandomForestRegressor(n_estimators=2000, n_jobs=1, min_samples_split=3, max_features=5)
         self.test_score = 0
         self.mp = 0
 
@@ -51,7 +51,7 @@ class TrainDivide(object):
         if not os.path.isdir('subm'):
             os.mkdir('subm')
 
-        suffix = str(round(loss, 4)) + '_' + str(now.strftime("%Y-%m-%d-%H-%M"))
+        suffix = str(round(loss, 8)) + '_' + str(now.strftime("%Y-%m-%d-%H-%M"))
         sub_file = os.path.join('subm', 'submission_' + suffix + '.csv')
         final_result.to_csv(sub_file, index=False)
 
@@ -130,13 +130,13 @@ class TrainDivide(object):
 
     def train_process(self, train_data, train_target_data, test_data, test_target_data):
         # clf = rfr.fit(train_data, train_target_data)
-        clf = self.est.fit(train_data, train_target_data)
+        clf = self.rfr.fit(train_data, train_target_data)
         self.test_score = clf.score(test_data, test_target_data)
         print "test_score: ", self.test_score
 
         test_predict = clf.predict(test_data)
         test_data["predict"] = test_predict
-        test_data["gap_diff"] = np.abs(test_data["predict"] - test_target_data) / (test_target_data + 0.1)
+        test_data["gap_diff"] = np.abs(test_data["predict"] - test_target_data) / (test_target_data + 0.01)
         test_df = test_data.fillna("pad")
         mape = np.mean(test_df.groupby(["district_id"])["gap_diff"].mean())
         self.mp = mape
@@ -195,6 +195,7 @@ class TrainDivide(object):
             mape.append(self.mp)
             gf.append(good_df[good_df.district_id == district_id])
         new_good_df = pd.concat(gf)
+        print "test_score mean:",np.mean(ts)
         print "mape mean:", np.mean(mape)
         self.create_submission(predictions, new_good_df, np.mean(ts))
 
