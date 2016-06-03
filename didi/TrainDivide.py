@@ -23,8 +23,8 @@ class TrainDivide(object):
         self.test_score = 0
         self.mp = 0
         self.param_grid = {'learning_rate': [0.01, 0.02, 0.05, 0.1],
-                           'max_depth': [6, 8,10],
-                           'max_features': [0.1, 0.5, 1.0]}
+                           'max_depth': [8, 10, 14, 20, 30, 40],
+                           'max_features': [0.1, 0.3, 0.5, 0.7, 0.9, 1.0]}
 
     @staticmethod
     def g_time(time_str):
@@ -352,7 +352,7 @@ class TrainDivide(object):
             good_train_target_data = train_target_data[0:int(ll * canshu)]
             good_test_data = train_data[int(ll * (1 - canshu)):]
             good_test_target_data = train_target_data[int(ll * (1 - canshu)):]
-            gs_cv = GridSearchCV(self.est, self.param_grid, n_jobs=10).fit(train_data, train_target_data)
+            gs_cv = GridSearchCV(self.est, self.param_grid, n_jobs=18).fit(train_data, train_target_data)
             print "gs_cv %s 最优参数:"%district_id, gs_cv.best_params_
             prediction = gs_cv.best_estimator_.predict(predict_df[predict_df.district_id == district_id])
 
