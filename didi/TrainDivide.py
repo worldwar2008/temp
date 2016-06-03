@@ -9,9 +9,8 @@ from sklearn.linear_model import SGDRegressor
 from sklearn.cross_validation import cross_val_score
 from sklearn.metrics import mean_absolute_error
 from sklearn.metrics import fbeta_score, make_scorer
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 from sklearn.grid_search import GridSearchCV
-
 
 
 class TrainDivide(object):
@@ -22,9 +21,9 @@ class TrainDivide(object):
         self.rfr = RandomForestRegressor(n_estimators=10, n_jobs=1, min_samples_split=3, max_features=5)
         self.test_score = 0
         self.mp = 0
-        self.param_grid = {'learning_rate': [0.01, 0.02, 0.05, 0.1],
-                           'max_depth': [8, 10, 14, 20, 30, 40],
-                           'max_features': [0.1, 0.3, 0.5, 0.7, 0.9, 1.0]}
+        self.param_grid = {'learning_rate': [0.01, 0.02],
+                           'max_depth': [30, 14, 40],
+                           'max_features': [0.5, 0.7]}
 
     @staticmethod
     def g_time(time_str):
@@ -46,6 +45,7 @@ class TrainDivide(object):
             return 1
         else:
             return 0
+            # return result
 
     def create_submission(self, predictions, predict_df, loss):
         print "len(predictions)", len(predictions)
@@ -218,7 +218,7 @@ class TrainDivide(object):
         return test_dev, ax
 
     def my_mape_loss_func(self, ground_truth, predictions):
-        diff = np.mean(np.abs(ground_truth - predictions.round(0)) / np.abs(ground_truth + 1e-9))
+        diff = np.mean(np.abs(ground_truth - predictions.round(0)) / np.abs(ground_truth + 1))
         # print "guo_diff:", diff
         return np.abs(diff)
 
@@ -287,7 +287,8 @@ class TrainDivide(object):
             mape.append(self.mp)
             gf.append(good_df[good_df.district_id == district_id])
             #### holdout result
-            holdout_value = np.mean(np.abs(self.est.predict(test_data).round(0) - test_target_data) / (test_target_data + 1))
+            holdout_value = np.mean(
+                np.abs(self.est.predict(test_data).round(0) - test_target_data) / (test_target_data + 1))
             print "holdout mean:", holdout_value
             holdout.append(holdout_value)
         new_good_df = pd.concat(gf)
@@ -352,20 +353,22 @@ class TrainDivide(object):
             good_train_target_data = train_target_data[0:int(ll * canshu)]
             good_test_data = train_data[int(ll * (1 - canshu)):]
             good_test_target_data = train_target_data[int(ll * (1 - canshu)):]
-            gs_cv = GridSearchCV(self.est, self.param_grid, n_jobs=18).fit(train_data, train_target_data)
-            print "gs_cv %s 最优参数:"%district_id, gs_cv.best_params_
+            mape_loss = make_scorer(self.my_mape_loss_func, greater_is_better=False)
+            gs_cv = GridSearchCV(self.est, self.param_grid, n_jobs=1, scoring=mape_loss).fit(train_data,
+                                                                                             train_target_data)
+            print "gs_cv %s 最优参数:" % district_id, gs_cv.best_params_
             prediction = gs_cv.best_estimator_.predict(predict_df[predict_df.district_id == district_id])
 
-
-            #clf = self.train_process(good_train_data, good_train_target_data, good_test_data, good_test_target_data)
-            #prediction = clf.predict(predict_df[predict_df.district_id == district_id])
+            # clf = self.train_process(good_train_data, good_train_target_data, good_test_data, good_test_target_data)
+            # prediction = clf.predict(predict_df[predict_df.district_id == district_id])
             for item in prediction:
                 predictions.append(item)
             ts.append(self.test_score)
             mape.append(self.mp)
             gf.append(good_df[good_df.district_id == district_id])
             #### holdout result
-            holdout_value = np.mean(np.abs(gs_cv.best_estimator_.predict(test_data).round(0) - test_target_data) / (test_target_data + 1))
+            holdout_value = np.mean(
+                np.abs(gs_cv.best_estimator_.predict(test_data).round(0) - test_target_data) / (test_target_data + 1))
             print "holdout mean:", holdout_value
             holdout.append(holdout_value)
         new_good_df = pd.concat(gf)
@@ -375,7 +378,6 @@ class TrainDivide(object):
         self.create_submission(predictions, new_good_df, np.mean(holdout))
 
 
-
 td = TrainDivide()
-#td.submission_process()
+# td.submission_process()
 td.grid_search()
