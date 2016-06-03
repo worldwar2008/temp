@@ -12,6 +12,10 @@ from sklearn.metrics import fbeta_score, make_scorer
 #import matplotlib.pyplot as plt
 from sklearn.grid_search import GridSearchCV
 
+def my_mape_loss_func(ground_truth, predictions):
+    diff = np.mean(np.abs(ground_truth - predictions.round(0)) / np.abs(ground_truth + 1))
+    # print "guo_diff:", diff
+    return np.abs(diff)
 
 class TrainDivide(object):
     def __init__(self):
@@ -21,9 +25,10 @@ class TrainDivide(object):
         self.rfr = RandomForestRegressor(n_estimators=10, n_jobs=1, min_samples_split=3, max_features=5)
         self.test_score = 0
         self.mp = 0
+        
         self.param_grid = {'learning_rate': [0.01, 0.02],
-                           'max_depth': [30, 14, 40],
-                           'max_features': [0.5, 0.7]}
+                           'max_depth': [30, 40, 50, 70],
+                           'max_features': [0.5, 0.7, 0.8, 1]}
 
     @staticmethod
     def g_time(time_str):
@@ -353,8 +358,8 @@ class TrainDivide(object):
             good_train_target_data = train_target_data[0:int(ll * canshu)]
             good_test_data = train_data[int(ll * (1 - canshu)):]
             good_test_target_data = train_target_data[int(ll * (1 - canshu)):]
-            mape_loss = make_scorer(self.my_mape_loss_func, greater_is_better=False)
-            gs_cv = GridSearchCV(self.est, self.param_grid, n_jobs=1, scoring=mape_loss).fit(train_data,
+            mape_loss = make_scorer(my_mape_loss_func, greater_is_better=False)
+            gs_cv = GridSearchCV(self.est, self.param_grid, n_jobs=14, scoring=mape_loss).fit(train_data,
                                                                                              train_target_data)
             print "gs_cv %s 最优参数:" % district_id, gs_cv.best_params_
             prediction = gs_cv.best_estimator_.predict(predict_df[predict_df.district_id == district_id])

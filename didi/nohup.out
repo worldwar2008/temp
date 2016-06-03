@@ -1,197 +1,456 @@
+good_df.shape (2838, 10)
 district_id= 1
-gs_cv 1 最优参数: {'max_features': 0.5, 'learning_rate': 0.01, 'max_depth': 30}
-holdout mean: 0.941628483489
+gs_cv 1 最优参数: {'max_features': 0.7, 'learning_rate': 0.02, 'max_depth': 50}
+holdout mean: 0.875541147053
 district_id= 2
-gs_cv 2 最优参数: {'max_features': 0.1, 'learning_rate': 0.01, 'max_depth': 40}
-holdout mean: 0.542746400886
+gs_cv 2 最优参数: {'max_features': 0.7, 'learning_rate': 0.02, 'max_depth': 30}
+holdout mean: 0.554374307863
 district_id= 3
-gs_cv 3 最优参数: {'max_features': 0.1, 'learning_rate': 0.01, 'max_depth': 20}
-holdout mean: 0.579731892757
+gs_cv 3 最优参数: {'max_features': 0.5, 'learning_rate': 0.02, 'max_depth': 40}
+holdout mean: 0.639885954382
 district_id= 4
-gs_cv 4 最优参数: {'max_features': 0.7, 'learning_rate': 0.1, 'max_depth': 20}
-holdout mean: 0.896731114735
+gs_cv 4 最优参数: {'max_features': 0.7, 'learning_rate': 0.02, 'max_depth': 30}
+holdout mean: 0.845613036816
 district_id= 5
-gs_cv 5 最优参数: {'max_features': 0.3, 'learning_rate': 0.02, 'max_depth': 40}
-holdout mean: 0.711901250176
+gs_cv 5 最优参数: {'max_features': 0.5, 'learning_rate': 0.02, 'max_depth': 40}
+holdout mean: 0.688794072201
 district_id= 6
-gs_cv 6 最优参数: {'max_features': 0.5, 'learning_rate': 0.02, 'max_depth': 30}
-holdout mean: 1.27578313088
+gs_cv 6 最优参数: {'max_features': 0.7, 'learning_rate': 0.02, 'max_depth': 50}
+holdout mean: 1.26261623337
 district_id= 7
-gs_cv 7 最优参数: {'max_features': 0.5, 'learning_rate': 0.02, 'max_depth': 20}
-holdout mean: 1.73679153614
+gs_cv 7 最优参数: {'max_features': 0.5, 'learning_rate': 0.01, 'max_depth': 50}
+holdout mean: 1.64736669848
 district_id= 8
-gs_cv 8 最优参数: {'max_features': 0.3, 'learning_rate': 0.05, 'max_depth': 10}
-holdout mean: 1.63279601294
+gs_cv 8 最优参数: {'max_features': 0.7, 'learning_rate': 0.01, 'max_depth': 40}
+holdout mean: 1.31223312663
 district_id= 9
-gs_cv 9 最优参数: {'max_features': 0.1, 'learning_rate': 0.02, 'max_depth': 30}
-holdout mean: 0.790108291917
+gs_cv 9 最优参数: {'max_features': 0.5, 'learning_rate': 0.02, 'max_depth': 40}
+holdout mean: 0.726916656126
 district_id= 10
-gs_cv 10 最优参数: {'max_features': 0.1, 'learning_rate': 0.01, 'max_depth': 40}
-holdout mean: 0.830132962276
+gs_cv 10 最优参数: {'max_features': 0.7, 'learning_rate': 0.01, 'max_depth': 40}
+holdout mean: 0.865698438466
 district_id= 11
-gs_cv 11 最优参数: {'max_features': 0.1, 'learning_rate': 0.02, 'max_depth': 40}
-holdout mean: 0.806444567491
+gs_cv 11 最优参数: {'max_features': 0.5, 'learning_rate': 0.01, 'max_depth': 30}
+holdout mean: 0.659868340101
 district_id= 12
-gs_cv 12 最优参数: {'max_features': 0.3, 'learning_rate': 0.02, 'max_depth': 20}
-holdout mean: 0.611376995671
+gs_cv 12 最优参数: {'max_features': 0.5, 'learning_rate': 0.01, 'max_depth': 30}
+holdout mean: 0.598568943123
 district_id= 13
-gs_cv 13 最优参数: {'max_features': 0.1, 'learning_rate': 0.02, 'max_depth': 20}
-holdout mean: 0.605218246566
+gs_cv 13 最优参数: {'max_features': 0.7, 'learning_rate': 0.02, 'max_depth': 30}
+holdout mean: 0.601541504551
 district_id= 14
-gs_cv 14 最优参数: {'max_features': 0.5, 'learning_rate': 0.05, 'max_depth': 8}
-holdout mean: 1.86383970012
+gs_cv 14 最优参数: {'max_features': 0.7, 'learning_rate': 0.01, 'max_depth': 30}
+holdout mean: 0.844824318376
 district_id= 15
-gs_cv 15 最优参数: {'max_features': 0.3, 'learning_rate': 0.01, 'max_depth': 20}
-holdout mean: 0.478448275862
+gs_cv 15 最优参数: {'max_features': 0.7, 'learning_rate': 0.02, 'max_depth': 50}
+holdout mean: 0.581896551724
 district_id= 16
-gs_cv 16 最优参数: {'max_features': 0.7, 'learning_rate': 0.05, 'max_depth': 30}
-holdout mean: 0.571602794277
+gs_cv 16 最优参数: {'max_features': 0.7, 'learning_rate': 0.01, 'max_depth': 40}
+holdout mean: 0.593873955502
 district_id= 17
-gs_cv 17 最优参数: {'max_features': 0.1, 'learning_rate': 0.01, 'max_depth': 20}
-holdout mean: 0.49191976003
+gs_cv 17 最优参数: {'max_features': 0.5, 'learning_rate': 0.02, 'max_depth': 30}
+holdout mean: 0.452737157855
 district_id= 18
-gs_cv 18 最优参数: {'max_features': 0.1, 'learning_rate': 0.01, 'max_depth': 40}
-holdout mean: 0.652937738403
+gs_cv 18 最优参数: {'max_features': 0.5, 'learning_rate': 0.01, 'max_depth': 40}
+holdout mean: 0.753036175711
 district_id= 19
-gs_cv 19 最优参数: {'max_features': 0.7, 'learning_rate': 0.05, 'max_depth': 14}
-holdout mean: 0.791218966219
+gs_cv 19 最优参数: {'max_features': 0.7, 'learning_rate': 0.01, 'max_depth': 30}
+holdout mean: 0.69753741091
 district_id= 20
-gs_cv 20 最优参数: {'max_features': 1.0, 'learning_rate': 0.01, 'max_depth': 40}
-holdout mean: 0.830054632935
+gs_cv 20 最优参数: {'max_features': 0.7, 'learning_rate': 0.01, 'max_depth': 50}
+holdout mean: 0.828981733675
 district_id= 21
-gs_cv 21 最优参数: {'max_features': 0.7, 'learning_rate': 0.02, 'max_depth': 30}
-holdout mean: 1.33248682842
+gs_cv 21 最优参数: {'max_features': 0.7, 'learning_rate': 0.01, 'max_depth': 40}
+holdout mean: 1.24896556931
 district_id= 22
-gs_cv 22 最优参数: {'max_features': 0.1, 'learning_rate': 0.01, 'max_depth': 40}
-holdout mean: 0.386582243828
+gs_cv 22 最优参数: {'max_features': 0.5, 'learning_rate': 0.01, 'max_depth': 50}
+holdout mean: 0.404560233034
 district_id= 23
-gs_cv 23 最优参数: {'max_features': 0.3, 'learning_rate': 0.1, 'max_depth': 8}
-holdout mean: 1.10621809421
+gs_cv 23 最优参数: {'max_features': 0.5, 'learning_rate': 0.02, 'max_depth': 50}
+holdout mean: 0.904049190519
 district_id= 24
-gs_cv 24 最优参数: {'max_features': 0.7, 'learning_rate': 0.05, 'max_depth': 14}
-holdout mean: 1.09254184243
+gs_cv 24 最优参数: {'max_features': 0.7, 'learning_rate': 0.02, 'max_depth': 30}
+holdout mean: 0.779916181079
 district_id= 25
-gs_cv 25 最优参数: {'max_features': 0.7, 'learning_rate': 0.1, 'max_depth': 30}
-holdout mean: 0.671454571221
+gs_cv 25 最优参数: {'max_features': 0.7, 'learning_rate': 0.02, 'max_depth': 30}
+holdout mean: 0.573066323111
 district_id= 26
-gs_cv 26 最优参数: {'max_features': 0.5, 'learning_rate': 0.05, 'max_depth': 40}
-holdout mean: 1.84209770562
+gs_cv 26 最优参数: {'max_features': 0.7, 'learning_rate': 0.01, 'max_depth': 50}
+holdout mean: 2.11990717488
 district_id= 27
-gs_cv 27 最优参数: {'max_features': 0.3, 'learning_rate': 0.02, 'max_depth': 30}
-holdout mean: 0.433601968776
+gs_cv 27 最优参数: {'max_features': 0.5, 'learning_rate': 0.01, 'max_depth': 30}
+holdout mean: 0.439050832766
 district_id= 28
-gs_cv 28 最优参数: {'max_features': 1.0, 'learning_rate': 0.01, 'max_depth': 14}
-holdout mean: 1.14774726231
+gs_cv 28 最优参数: {'max_features': 0.7, 'learning_rate': 0.01, 'max_depth': 40}
+holdout mean: 0.912610829454
 district_id= 29
-gs_cv 29 最优参数: {'max_features': 0.3, 'learning_rate': 0.05, 'max_depth': 20}
-holdout mean: 0.781680133972
+gs_cv 29 最优参数: {'max_features': 0.7, 'learning_rate': 0.01, 'max_depth': 30}
+holdout mean: 0.733831675114
 district_id= 30
-gs_cv 30 最优参数: {'max_features': 0.1, 'learning_rate': 0.01, 'max_depth': 40}
-holdout mean: 0.637957157785
+gs_cv 30 最优参数: {'max_features': 0.5, 'learning_rate': 0.01, 'max_depth': 30}
+holdout mean: 0.669278996865
 district_id= 31
-gs_cv 31 最优参数: {'max_features': 0.1, 'learning_rate': 0.01, 'max_depth': 40}
-holdout mean: 0.664109328172
+gs_cv 31 最优参数: {'max_features': 0.7, 'learning_rate': 0.02, 'max_depth': 50}
+holdout mean: 0.697994041549
 district_id= 32
-gs_cv 32 最优参数: {'max_features': 0.1, 'learning_rate': 0.02, 'max_depth': 40}
-holdout mean: 0.629248935346
+gs_cv 32 最优参数: {'max_features': 0.5, 'learning_rate': 0.02, 'max_depth': 30}
+holdout mean: 0.66746031746
 district_id= 33
-gs_cv 33 最优参数: {'max_features': 0.1, 'learning_rate': 0.01, 'max_depth': 20}
-holdout mean: 0.532596000038
+gs_cv 33 最优参数: {'max_features': 0.7, 'learning_rate': 0.02, 'max_depth': 30}
+holdout mean: 0.510632175748
 district_id= 34
-gs_cv 34 最优参数: {'max_features': 0.1, 'learning_rate': 0.02, 'max_depth': 20}
-holdout mean: 0.853918260217
+gs_cv 34 最优参数: {'max_features': 0.5, 'learning_rate': 0.01, 'max_depth': 30}
+holdout mean: 1.00273715786
 district_id= 35
-gs_cv 35 最优参数: {'max_features': 0.3, 'learning_rate': 0.01, 'max_depth': 30}
-holdout mean: 0.855500063563
+gs_cv 35 最优参数: {'max_features': 0.7, 'learning_rate': 0.02, 'max_depth': 30}
+holdout mean: 0.806020008734
 district_id= 36
-gs_cv 36 最优参数: {'max_features': 0.3, 'learning_rate': 0.1, 'max_depth': 40}
-holdout mean: 0.822201822385
+gs_cv 36 最优参数: {'max_features': 0.5, 'learning_rate': 0.01, 'max_depth': 50}
+holdout mean: 0.708248334013
 district_id= 37
-gs_cv 37 最优参数: {'max_features': 0.7, 'learning_rate': 0.01, 'max_depth': 8}
-holdout mean: 1.21066546877
+gs_cv 37 最优参数: {'max_features': 0.7, 'learning_rate': 0.02, 'max_depth': 40}
+holdout mean: 0.991953904381
 district_id= 38
-gs_cv 38 最优参数: {'max_features': 0.3, 'learning_rate': 0.01, 'max_depth': 40}
-holdout mean: 0.789807543877
+gs_cv 38 最优参数: {'max_features': 0.7, 'learning_rate': 0.02, 'max_depth': 50}
+holdout mean: 0.685661431592
 district_id= 39
-gs_cv 39 最优参数: {'max_features': 0.3, 'learning_rate': 0.01, 'max_depth': 30}
-holdout mean: 0.913450722506
+gs_cv 39 最优参数: {'max_features': 0.5, 'learning_rate': 0.02, 'max_depth': 30}
+holdout mean: 0.90437373213
 district_id= 40
-gs_cv 40 最优参数: {'max_features': 0.3, 'learning_rate': 0.02, 'max_depth': 30}
-holdout mean: 0.670842781557
+gs_cv 40 最优参数: {'max_features': 0.5, 'learning_rate': 0.01, 'max_depth': 40}
+holdout mean: 0.704572940287
 district_id= 41
-gs_cv 41 最优参数: {'max_features': 0.1, 'learning_rate': 0.02, 'max_depth': 20}
-holdout mean: 0.661662691314
+gs_cv 41 最优参数: {'max_features': 0.5, 'learning_rate': 0.01, 'max_depth': 50}
+holdout mean: 0.794372036233
 district_id= 42
-gs_cv 42 最优参数: {'max_features': 0.5, 'learning_rate': 0.02, 'max_depth': 30}
-holdout mean: 0.903899358474
+gs_cv 42 最优参数: {'max_features': 0.5, 'learning_rate': 0.01, 'max_depth': 30}
+holdout mean: 0.947773253182
 district_id= 43
-gs_cv 43 最优参数: {'max_features': 0.1, 'learning_rate': 0.02, 'max_depth': 40}
-holdout mean: 0.557352941176
+gs_cv 43 最优参数: {'max_features': 0.7, 'learning_rate': 0.02, 'max_depth': 50}
+holdout mean: 0.60727124183
 district_id= 44
-gs_cv 44 最优参数: {'max_features': 0.3, 'learning_rate': 0.02, 'max_depth': 40}
-holdout mean: 0.611322463768
+gs_cv 44 最优参数: {'max_features': 0.5, 'learning_rate': 0.02, 'max_depth': 30}
+holdout mean: 0.659918478261
 district_id= 45
-gs_cv 45 最优参数: {'max_features': 0.1, 'learning_rate': 0.02, 'max_depth': 30}
-holdout mean: 0.533681962482
+gs_cv 45 最优参数: {'max_features': 0.7, 'learning_rate': 0.01, 'max_depth': 30}
+holdout mean: 0.629948629149
 district_id= 46
-gs_cv 46 最优参数: {'max_features': 0.7, 'learning_rate': 0.05, 'max_depth': 14}
-holdout mean: 1.29718363068
+gs_cv 46 最优参数: {'max_features': 0.7, 'learning_rate': 0.01, 'max_depth': 40}
+holdout mean: 0.998079659876
 district_id= 47
-gs_cv 47 最优参数: {'max_features': 0.1, 'learning_rate': 0.1, 'max_depth': 40}
-holdout mean: 0.697160095946
+gs_cv 47 最优参数: {'max_features': 0.5, 'learning_rate': 0.02, 'max_depth': 40}
+holdout mean: 0.630017466953
 district_id= 48
-gs_cv 48 最优参数: {'max_features': 0.3, 'learning_rate': 0.05, 'max_depth': 40}
-holdout mean: 1.39591221656
+gs_cv 48 最优参数: {'max_features': 0.7, 'learning_rate': 0.01, 'max_depth': 30}
+holdout mean: 0.910553458553
 district_id= 49
-gs_cv 49 最优参数: {'max_features': 0.1, 'learning_rate': 0.01, 'max_depth': 20}
-holdout mean: 0.670268107243
+gs_cv 49 最优参数: {'max_features': 0.5, 'learning_rate': 0.01, 'max_depth': 50}
+holdout mean: 0.768227290916
 district_id= 50
-gs_cv 50 最优参数: {'max_features': 0.1, 'learning_rate': 0.01, 'max_depth': 40}
-holdout mean: 0.502450980392
+gs_cv 50 最优参数: {'max_features': 0.7, 'learning_rate': 0.02, 'max_depth': 30}
+holdout mean: 0.532679738562
 district_id= 51
-gs_cv 51 最优参数: {'max_features': 0.3, 'learning_rate': 0.01, 'max_depth': 10}
-holdout mean: 4.6848303534
+gs_cv 51 最优参数: {'max_features': 0.7, 'learning_rate': 0.02, 'max_depth': 50}
+holdout mean: 2.60372017703
 district_id= 52
-gs_cv 52 最优参数: {'max_features': 0.1, 'learning_rate': 0.01, 'max_depth': 40}
-holdout mean: 0.397868217054
+gs_cv 52 最优参数: {'max_features': 0.7, 'learning_rate': 0.02, 'max_depth': 14}
+holdout mean: 0.445348837209
 district_id= 53
-gs_cv 53 最优参数: {'max_features': 0.7, 'learning_rate': 0.1, 'max_depth': 14}
-holdout mean: 0.875571711732
+gs_cv 53 最优参数: {'max_features': 0.5, 'learning_rate': 0.02, 'max_depth': 30}
+holdout mean: 0.842239793106
 district_id= 54
-gs_cv 54 最优参数: {'max_features': 0.3, 'learning_rate': 0.1, 'max_depth': 20}
-holdout mean: 0.49173126615
+gs_cv 54 最优参数: {'max_features': 0.7, 'learning_rate': 0.02, 'max_depth': 50}
+holdout mean: 0.355555555556
 district_id= 55
-gs_cv 55 最优参数: {'max_features': 0.1, 'learning_rate': 0.02, 'max_depth': 40}
-holdout mean: 0.184570957096
+gs_cv 55 最优参数: {'max_features': 0.5, 'learning_rate': 0.02, 'max_depth': 30}
+holdout mean: 0.322854785479
 district_id= 56
-gs_cv 56 最优参数: {'max_features': 0.1, 'learning_rate': 0.02, 'max_depth': 40}
-holdout mean: 0.635554221689
+gs_cv 56 最优参数: {'max_features': 0.5, 'learning_rate': 0.02, 'max_depth': 50}
+holdout mean: 0.633603441377
 district_id= 57
-gs_cv 57 最优参数: {'max_features': 0.1, 'learning_rate': 0.02, 'max_depth': 40}
-holdout mean: 0.474547803618
+gs_cv 57 最优参数: {'max_features': 0.5, 'learning_rate': 0.01, 'max_depth': 40}
+holdout mean: 0.548837209302
 district_id= 58
-gs_cv 58 最优参数: {'max_features': 0.1, 'learning_rate': 0.01, 'max_depth': 20}
-holdout mean: 0.67564847077
+gs_cv 58 最优参数: {'max_features': 0.7, 'learning_rate': 0.01, 'max_depth': 30}
+holdout mean: 0.64197638405
 district_id= 59
-gs_cv 59 最优参数: {'max_features': 0.3, 'learning_rate': 0.02, 'max_depth': 30}
-holdout mean: 0.715301724138
+gs_cv 59 最优参数: {'max_features': 0.7, 'learning_rate': 0.01, 'max_depth': 30}
+holdout mean: 0.634755747126
 district_id= 60
-gs_cv 60 最优参数: {'max_features': 0.1, 'learning_rate': 0.01, 'max_depth': 30}
-holdout mean: 0.617635658915
+gs_cv 60 最优参数: {'max_features': 0.7, 'learning_rate': 0.02, 'max_depth': 40}
+holdout mean: 0.521124031008
 district_id= 61
-gs_cv 61 最优参数: {'max_features': 0.1, 'learning_rate': 0.02, 'max_depth': 40}
-holdout mean: 0.409855072464
+gs_cv 61 最优参数: {'max_features': 0.7, 'learning_rate': 0.02, 'max_depth': 30}
+holdout mean: 0.489565217391
 district_id= 62
-gs_cv 62 最优参数: {'max_features': 0.1, 'learning_rate': 0.02, 'max_depth': 20}
-holdout mean: 0.395586820587
+gs_cv 62 最优参数: {'max_features': 0.5, 'learning_rate': 0.01, 'max_depth': 30}
+holdout mean: 0.452531265031
 district_id= 63
-gs_cv 63 最优参数: {'max_features': 0.1, 'learning_rate': 0.01, 'max_depth': 30}
+gs_cv 63 最优参数: {'max_features': 0.7, 'learning_rate': 0.02, 'max_depth': 14}
+holdout mean: 0.676141885326
+district_id= 64
+gs_cv 64 最优参数: {'max_features': 0.5, 'learning_rate': 0.01, 'max_depth': 50}
+holdout mean: 0.354005167959
+district_id= 65
+gs_cv 65 最优参数: {'max_features': 0.5, 'learning_rate': 0.01, 'max_depth': 40}
+holdout mean: 0.483169129721
+district_id= 66
+gs_cv 66 最优参数: {'max_features': 0.5, 'learning_rate': 0.02, 'max_depth': 30}
+holdout mean: 0.248062015504
+mape mean: 0.0
+ts mean: 0.0
+holdout mean: 0.761047404674
+len(predictions) 2838
+len(predict_df) 2838
+final_result    district_id           time   tj_level_1  tj_level_2  tj_level_3  \
+0            1  2016-01-22-46  1461.000000  259.000000  102.000000   
+1            2  2016-01-22-46   651.666667   78.000000   20.000000   
+2            3  2016-01-22-46   188.333333   26.333333    5.333333   
+3            4  2016-01-22-46   652.000000  127.333333   33.666667   
+4            5  2016-01-22-46    97.000000   10.666667    3.000000   
+5            6  2016-01-22-46   321.000000   58.666667   26.333333   
+6            7  2016-01-22-46  1763.333333  247.333333   70.000000   
+7            8  2016-01-22-46  2638.666667  316.000000  114.000000   
+8            9  2016-01-22-46   504.666667   68.333333   19.000000   
+9           10  2016-01-22-46   146.333333   15.333333    4.000000   
+
+   tj_level_4  weather  temperature  pm25  week        gap  
+0   67.333333      2.0          2.0  51.0     0   4.444201  
+1   13.666667      2.0          2.0  51.0     0   4.607199  
+2    2.666667      2.0          2.0  51.0     0   8.068653  
+3   30.000000      2.0          2.0  51.0     0   9.441562  
+4    2.000000      2.0          2.0  51.0     0  10.401166  
+5   27.000000      2.0          2.0  51.0     0   7.001805  
+6   45.333333      2.0          2.0  51.0     0   7.691737  
+7   96.666667      2.0          2.0  51.0     0  11.209078  
+8   27.666667      2.0          2.0  51.0     0   3.354942  
+9    0.666667      2.0          2.0  51.0     0   5.536785  
+final_result.shape (2838, 11)
+good_df.shape (2838, 10)
+district_id= 1
+gs_cv 1 最优参数: {'max_features': 0.8, 'learning_rate': 0.01, 'max_depth': 40}
+holdout mean: 0.714867346263
+district_id= 2
+gs_cv 2 最优参数: {'max_features': 1, 'learning_rate': 0.01, 'max_depth': 40}
+holdout mean: 0.547914359542
+district_id= 3
+gs_cv 3 最优参数: {'max_features': 1, 'learning_rate': 0.02, 'max_depth': 40}
+holdout mean: 0.540306122449
+district_id= 4
+gs_cv 4 最优参数: {'max_features': 0.8, 'learning_rate': 0.01, 'max_depth': 50}
+holdout mean: 0.850259582969
+district_id= 5
+gs_cv 5 最优参数: {'max_features': 0.5, 'learning_rate': 0.02, 'max_depth': 50}
+holdout mean: 0.633449220396
+district_id= 6
+gs_cv 6 最优参数: {'max_features': 0.8, 'learning_rate': 0.02, 'max_depth': 50}
+holdout mean: 1.22086040013
+district_id= 7
+gs_cv 7 最优参数: {'max_features': 0.7, 'learning_rate': 0.02, 'max_depth': 40}
+holdout mean: 1.75324041987
+district_id= 8
+gs_cv 8 最优参数: {'max_features': 0.7, 'learning_rate': 0.02, 'max_depth': 30}
+holdout mean: 1.29915485482
+district_id= 9
+gs_cv 9 最优参数: {'max_features': 0.5, 'learning_rate': 0.02, 'max_depth': 70}
+holdout mean: 0.753485861945
+district_id= 10
+gs_cv 10 最优参数: {'max_features': 0.7, 'learning_rate': 0.02, 'max_depth': 40}
+holdout mean: 0.847841295609
+district_id= 11
+gs_cv 11 最优参数: {'max_features': 1, 'learning_rate': 0.01, 'max_depth': 40}
+holdout mean: 0.79976928756
+district_id= 12
+gs_cv 12 最优参数: {'max_features': 0.5, 'learning_rate': 0.01, 'max_depth': 70}
+holdout mean: 0.616643375151
+district_id= 13
+gs_cv 13 最优参数: {'max_features': 0.8, 'learning_rate': 0.01, 'max_depth': 40}
+holdout mean: 0.637071220313
+district_id= 14
+gs_cv 14 最优参数: {'max_features': 0.7, 'learning_rate': 0.01, 'max_depth': 30}
+holdout mean: 0.873643463221
+district_id= 15
+gs_cv 15 最优参数: {'max_features': 0.8, 'learning_rate': 0.02, 'max_depth': 40}
+holdout mean: 0.616379310345
+district_id= 16
+gs_cv 16 最优参数: {'max_features': 0.8, 'learning_rate': 0.02, 'max_depth': 50}
+holdout mean: 0.573610498029
+district_id= 17
+gs_cv 17 最优参数: {'max_features': 1, 'learning_rate': 0.02, 'max_depth': 70}
+holdout mean: 0.373415823022
+district_id= 18
+gs_cv 18 最优参数: {'max_features': 1, 'learning_rate': 0.02, 'max_depth': 40}
+holdout mean: 0.683234896026
+district_id= 19
+gs_cv 19 最优参数: {'max_features': 0.8, 'learning_rate': 0.02, 'max_depth': 70}
+holdout mean: 0.629061958713
+district_id= 20
+gs_cv 20 最优参数: {'max_features': 0.8, 'learning_rate': 0.01, 'max_depth': 40}
+holdout mean: 0.846000208452
+district_id= 21
+gs_cv 21 最优参数: {'max_features': 0.5, 'learning_rate': 0.01, 'max_depth': 30}
+holdout mean: 1.16214386389
+district_id= 22
+gs_cv 22 最优参数: {'max_features': 0.5, 'learning_rate': 0.01, 'max_depth': 40}
+holdout mean: 0.39434316635
+district_id= 23
+gs_cv 23 最优参数: {'max_features': 0.8, 'learning_rate': 0.02, 'max_depth': 40}
+holdout mean: 1.00883473366
+district_id= 24
+gs_cv 24 最优参数: {'max_features': 0.8, 'learning_rate': 0.01, 'max_depth': 50}
+holdout mean: 0.824654837197
+district_id= 25
+gs_cv 25 最优参数: {'max_features': 0.5, 'learning_rate': 0.02, 'max_depth': 70}
+holdout mean: 0.611721410105
+district_id= 26
+gs_cv 26 最优参数: {'max_features': 0.8, 'learning_rate': 0.02, 'max_depth': 30}
+holdout mean: 2.21891220006
+district_id= 27
+gs_cv 27 最优参数: {'max_features': 0.7, 'learning_rate': 0.02, 'max_depth': 50}
+holdout mean: 0.442441978218
+district_id= 28
+gs_cv 28 最优参数: {'max_features': 0.8, 'learning_rate': 0.01, 'max_depth': 70}
+holdout mean: 0.897066167215
+district_id= 29
+gs_cv 29 最优参数: {'max_features': 0.8, 'learning_rate': 0.01, 'max_depth': 30}
+holdout mean: 0.768293426693
+district_id= 30
+gs_cv 30 最优参数: {'max_features': 1, 'learning_rate': 0.01, 'max_depth': 30}
+holdout mean: 0.683646812957
+district_id= 31
+gs_cv 31 最优参数: {'max_features': 1, 'learning_rate': 0.02, 'max_depth': 30}
+holdout mean: 0.643706922418
+district_id= 32
+gs_cv 32 最优参数: {'max_features': 1, 'learning_rate': 0.01, 'max_depth': 50}
+holdout mean: 0.660820751065
+district_id= 33
+gs_cv 33 最优参数: {'max_features': 0.5, 'learning_rate': 0.02, 'max_depth': 70}
+holdout mean: 0.557789798487
+district_id= 34
+gs_cv 34 最优参数: {'max_features': 1, 'learning_rate': 0.02, 'max_depth': 30}
+holdout mean: 0.803787026622
+district_id= 35
+gs_cv 35 最优参数: {'max_features': 0.8, 'learning_rate': 0.01, 'max_depth': 40}
+holdout mean: 0.748951401201
+district_id= 36
+gs_cv 36 最优参数: {'max_features': 0.5, 'learning_rate': 0.02, 'max_depth': 40}
+holdout mean: 0.700173398613
+district_id= 37
+gs_cv 37 最优参数: {'max_features': 0.8, 'learning_rate': 0.01, 'max_depth': 30}
+holdout mean: 1.03404847765
+district_id= 38
+gs_cv 38 最优参数: {'max_features': 0.7, 'learning_rate': 0.01, 'max_depth': 30}
+holdout mean: 0.731728973008
+district_id= 39
+gs_cv 39 最优参数: {'max_features': 0.5, 'learning_rate': 0.02, 'max_depth': 30}
+holdout mean: 0.910685443166
+district_id= 40
+gs_cv 40 最优参数: {'max_features': 0.5, 'learning_rate': 0.02, 'max_depth': 70}
+holdout mean: 0.697552910053
+district_id= 41
+gs_cv 41 最优参数: {'max_features': 0.8, 'learning_rate': 0.01, 'max_depth': 50}
+holdout mean: 0.805290295407
+district_id= 42
+gs_cv 42 最优参数: {'max_features': 0.5, 'learning_rate': 0.01, 'max_depth': 30}
+holdout mean: 0.94131204643
+district_id= 43
+gs_cv 43 最优参数: {'max_features': 1, 'learning_rate': 0.02, 'max_depth': 50}
+holdout mean: 0.587990196078
+district_id= 44
+gs_cv 44 最优参数: {'max_features': 0.7, 'learning_rate': 0.02, 'max_depth': 70}
+holdout mean: 0.739266304348
+district_id= 45
+gs_cv 45 最优参数: {'max_features': 0.7, 'learning_rate': 0.02, 'max_depth': 70}
+holdout mean: 0.632170851371
+district_id= 46
+gs_cv 46 最优参数: {'max_features': 0.5, 'learning_rate': 0.02, 'max_depth': 40}
+holdout mean: 1.11677215622
+district_id= 47
+gs_cv 47 最优参数: {'max_features': 1, 'learning_rate': 0.01, 'max_depth': 30}
+holdout mean: 0.60059139447
+district_id= 48
+gs_cv 48 最优参数: {'max_features': 0.8, 'learning_rate': 0.02, 'max_depth': 50}
+holdout mean: 0.925212258249
+district_id= 49
+gs_cv 49 最优参数: {'max_features': 1, 'learning_rate': 0.01, 'max_depth': 30}
+holdout mean: 0.663265306122
+district_id= 50
+gs_cv 50 最优参数: {'max_features': 1, 'learning_rate': 0.02, 'max_depth': 70}
+holdout mean: 0.484477124183
+district_id= 51
+gs_cv 51 最优参数: {'max_features': 0.8, 'learning_rate': 0.02, 'max_depth': 50}
+holdout mean: 2.4879856491
+district_id= 52
+gs_cv 52 最优参数: {'max_features': 1, 'learning_rate': 0.02, 'max_depth': 50}
+holdout mean: 0.425968992248
+district_id= 53
+gs_cv 53 最优参数: {'max_features': 0.7, 'learning_rate': 0.01, 'max_depth': 50}
+holdout mean: 0.790493068263
+district_id= 54
+gs_cv 54 最优参数: {'max_features': 1, 'learning_rate': 0.02, 'max_depth': 70}
+holdout mean: 0.400645994832
+district_id= 55
+gs_cv 55 最优参数: {'max_features': 1, 'learning_rate': 0.02, 'max_depth': 70}
+holdout mean: 0.169719471947
+district_id= 56
+gs_cv 56 最优参数: {'max_features': 1, 'learning_rate': 0.01, 'max_depth': 70}
+holdout mean: 0.611744697879
+district_id= 57
+gs_cv 57 最优参数: {'max_features': 1, 'learning_rate': 0.02, 'max_depth': 50}
+holdout mean: 0.533979328165
+district_id= 58
+gs_cv 58 最优参数: {'max_features': 0.7, 'learning_rate': 0.02, 'max_depth': 40}
+holdout mean: 0.64468641115
+district_id= 59
+gs_cv 59 最优参数: {'max_features': 0.8, 'learning_rate': 0.01, 'max_depth': 30}
+holdout mean: 0.605014367816
+district_id= 60
+gs_cv 60 最优参数: {'max_features': 0.5, 'learning_rate': 0.02, 'max_depth': 40}
+holdout mean: 0.591860465116
+district_id= 61
+gs_cv 61 最优参数: {'max_features': 0.8, 'learning_rate': 0.02, 'max_depth': 40}
+holdout mean: 0.550434782609
+district_id= 62
+gs_cv 62 最优参数: {'max_features': 0.5, 'learning_rate': 0.02, 'max_depth': 40}
+holdout mean: 0.436117123617
+district_id= 63
+gs_cv 63 最优参数: {'max_features': 1, 'learning_rate': 0.01, 'max_depth': 40}
 holdout mean: 0.609815354713
 district_id= 64
-gs_cv 64 最优参数: {'max_features': 0.1, 'learning_rate': 0.01, 'max_depth': 40}
-holdout mean: 0.418604651163
+gs_cv 64 最优参数: {'max_features': 1, 'learning_rate': 0.02, 'max_depth': 30}
+holdout mean: 0.366925064599
 district_id= 65
-gs_cv 65 最优参数: {'max_features': 0.3, 'learning_rate': 0.02, 'max_depth': 40}
-holdout mean: 0.50184729064
+gs_cv 65 最优参数: {'max_features': 0.5, 'learning_rate': 0.02, 'max_depth': 40}
+holdout mean: 0.498255336617
 district_id= 66
-gs_cv 66 最优参数: {'max_features': 0.1, 'learning_rate': 0.01, 'max_depth': 40}
+gs_cv 66 最优参数: {'max_features': 1, 'learning_rate': 0.01, 'max_depth': 70}
+holdout mean: 0.206072351421
+mape mean: 0.0
+ts mean: 0.0
+holdout mean: 0.753599690855
+len(predictions) 2838
+len(predict_df) 2838
+final_result    district_id           time   tj_level_1  tj_level_2  tj_level_3  \
+0            1  2016-01-22-46  1461.000000  259.000000  102.000000   
+1            2  2016-01-22-46   651.666667   78.000000   20.000000   
+2            3  2016-01-22-46   188.333333   26.333333    5.333333   
+3            4  2016-01-22-46   652.000000  127.333333   33.666667   
+4            5  2016-01-22-46    97.000000   10.666667    3.000000   
+5            6  2016-01-22-46   321.000000   58.666667   26.333333   
+6            7  2016-01-22-46  1763.333333  247.333333   70.000000   
+7            8  2016-01-22-46  2638.666667  316.000000  114.000000   
+8            9  2016-01-22-46   504.666667   68.333333   19.000000   
+9           10  2016-01-22-46   146.333333   15.333333    4.000000   
+
+   tj_level_4  weather  temperature  pm25  week       gap  
+0   67.333333      2.0          2.0  51.0     0  4.526108  
+1   13.666667      2.0          2.0  51.0     0  7.021140  
+2    2.666667      2.0          2.0  51.0     0  7.642468  
+3   30.000000      2.0          2.0  51.0     0  4.738621  
+4    2.000000      2.0          2.0  51.0     0  5.934639  
+5   27.000000      2.0          2.0  51.0     0  6.415840  
+6   45.333333      2.0          2.0  51.0     0  7.390763  
+7   96.666667      2.0          2.0  51.0     0  7.162049  
+8   27.666667      2.0          2.0  51.0     0  2.927462  
+9    0.666667      2.0          2.0  51.0     0  4.535087  
+final_result.shape (2838, 11)
